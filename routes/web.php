@@ -43,6 +43,14 @@ Route::get('/rota2', function (){
 // metodo 2:
 // Route::redirect('/rota2'), '/rota1');
 
+// Rota de contigência (fallback)
+Route::fallback(function (){
+   echo 'ERROR 404 - ROTA ACESSADA NÃO EXISTE. <a href="'.route('site.index').'"> Clique aqui </a> para voltar à pagina inicial';
+});
+
+
+
+
 /*
 
    Estabelecer expressões regulares para os parametros, verificando se os
