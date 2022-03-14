@@ -28,6 +28,18 @@ Route::prefix('/app')->group(function (){
     Route::get('/produtos', 'ContatoController@contato')->name('app.produtos');
 });
 
+//Recebendo parametro na rota e encaminhando para o controller
+Route::get('/teste/{p1}/{p2}','TesteController@teste')->name('teste');
+
+
+
+
+// Rota de contigência (fallback)
+Route::fallback(function (){
+    echo 'ERROR 404 - ROTA ACESSADA NÃO EXISTE. <a href="'.route('site.index').'"> Clique aqui </a> para voltar à pagina inicial';
+});
+
+
 
 
 Route::get('/rota1', function (){
@@ -42,11 +54,6 @@ Route::get('/rota2', function (){
 
 // metodo 2:
 // Route::redirect('/rota2'), '/rota1');
-
-// Rota de contigência (fallback)
-Route::fallback(function (){
-   echo 'ERROR 404 - ROTA ACESSADA NÃO EXISTE. <a href="'.route('site.index').'"> Clique aqui </a> para voltar à pagina inicial';
-});
 
 
 
