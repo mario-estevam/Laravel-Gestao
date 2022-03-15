@@ -1,10 +1,18 @@
 <h3>fornecedor</h3>
 
-{{-- apenas um comentário --}}
+@php
+// if(!<condição>) {} enquanto o if executa se o retorno for true
+// unless executa se o retorno for false
+@endphp
 
-@if(count($fornecedores)>0 && count($fornecedores)<10)
-    <h3>Existem alguns fornecedores cadastrados</h3>
-@elseif(count($fornecedores)>10)
-    <h3>Existem vários fornecedores cadastrados</h3>
+Fornecedor: {{$fornecedores[0]['nome']}}
+<br/>
+status: {{$fornecedores[0]['status']}}
+<br/>
+@if( !($fornecedores[0]['status']=='S'))
+        Fornecedor inativo
 @endif
-
+<br/>
+@unless($fornecedores[0]['status']=='S') {{--Forma mais limpa ao invés de usar o ! para negar condição do if --}}
+    Fornecedor inativo
+@endunless
