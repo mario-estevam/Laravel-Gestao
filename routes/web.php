@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 // ->name define um nome pra rota, podendo ser usado para chama-la
 
 
+
 Route::get('/', 'PrincipalController@principal')->name('site.index');
 Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobrenos');
 Route::get('/contato', 'ContatoController@contato')->name('site.contato');
-Route::get('/login', 'ContatoController@contato')->name('site.login');
+Route::get('/login', function(){return 'Login';})->name('site.login');
+
 
 // definindo prefixo de rota e agrupando as rotas pertentes ao prefixo utilizado
 Route::prefix('/app')->group(function (){
