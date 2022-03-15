@@ -24,7 +24,7 @@ Route::get('/login', 'ContatoController@contato')->name('site.login');
 // definindo prefixo de rota e agrupando as rotas pertentes ao prefixo utilizado
 Route::prefix('/app')->group(function (){
     Route::get('/clientes', function (){return 'Clientes'; })->name('app.clientes');
-    Route::get('/fornecedores', 'ContatoController@contato')->name('app.fornecedores');
+    Route::get('/fornecedores', 'FornecedorController@index')->name('app.fornecedor');
     Route::get('/produtos', 'ContatoController@contato')->name('app.produtos');
 });
 
