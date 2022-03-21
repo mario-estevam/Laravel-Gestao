@@ -9,9 +9,19 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        return view('site.login', ['titulo'=>'Login']);
+        $erro = $request->get('erro');
+
+        if ( $erro == 1){
+            $erro = 'Usuário ou senha inválidos';
+        }
+
+        if ( $erro == 2){
+            $erro = 'Necessário login';
+        }
+
+        return view('site.login', ['titulo'=>'Login','erro'=>$erro]);
     }
 
     public function autenticar(Request $request)
@@ -44,9 +54,20 @@ class LoginController extends Controller
             ->first();
 
         if(isset($usuario->name)) {
-            echo 'Usuário existe';
+
+            session_start();
+            $_SESSION['nome'] = $usuario->name;
+            $_SESSION['email'] = $usuario->email;
+
+            return redirect()->route('app.clientes');
         } else {
-            echo 'Usuário não existe';
+            return redirect()->route('site.login', ['erro' => 1]);
         }
+    }
+
+    public function sair()
+    {
+            session_destroy();
+            return redirect()->route('site.index');
     }
 }
