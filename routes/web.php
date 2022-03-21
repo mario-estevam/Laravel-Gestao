@@ -22,8 +22,8 @@ Route::get('/', 'PrincipalController@principal')
 Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobrenos');
 Route::get('/contato', 'ContatoController@contato')->name('site.contato');
 Route::post('/contato', 'ContatoController@salvar')->name('site.contato');
-Route::get('/login', function(){return 'Login';})->name('site.login');
-
+Route::get('/login', 'LoginController@index')->name('site.login');
+Route::post('/login', 'LoginController@autenticar')->name('site.login');
 
 // definindo prefixo de rota e agrupando as rotas pertentes ao prefixo utilizado
 Route::middleware('autenticacao')->prefix('/app')->group(function (){
