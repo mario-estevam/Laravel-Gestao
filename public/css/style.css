@@ -158,6 +158,13 @@ button:hover {
     text-align: center;
 }
 
+.titulo-pagina-2 {
+    padding: 70px 0px 10px 0px;
+    margin-bottom: 10px;
+    background-color: #2a9ee2;
+    text-align: center;
+}
+
 .informacao-pagina {
     text-align: center;
     margin-top: 30px;
@@ -186,4 +193,57 @@ button:hover {
 
 .redes-sociais img {
     margin: 0px 15px 0px 15px;
+}
+
+.botao {
+    padding: 15px 32px;
+    margin-left: 10px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+    border: 2px solid #3fd8e5; /* Green */
+}
+
+.botao1 {
+    padding: 15px 32px;
+    margin-left: 10px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+    border: 2px solid #4CAF50; /* Green */
+}
+
+.botao1:hover {
+    background-color: #9df1a1; /* Green */
+    color: white;
+}
+
+.botao:hover {
+    background-color: #a9d1ff; /* Green */
+    color: white;
+}
+
+.alerta {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+.pagination li {
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.pagination ul {
+    list-style-type: none;
 }
