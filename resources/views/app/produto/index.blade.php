@@ -10,10 +10,9 @@
             <p>Listagem de Produtos</p>
         </div>
 
-        <div class="menu">
+        <div style="padding-bottom: 10px" class="menu">
             <ul>
-                <li><a href="{{ route('produto.create') }}">Novo</a></li>
-                <li><a href="">Consulta</a></li>
+                <li><a class="botao" href="{{ route('produto.create') }}">Novo</a></li>
             </ul>
         </div>
 

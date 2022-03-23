@@ -13,13 +13,18 @@
             <div style="width:30%; margin-left: auto; margin-right: auto;">
                 <form action={{ route('site.login') }} method="post">
                     @csrf
+                    @if($erro != '')
+                    <div class="w3-panel w3-pale-red w3-border">
+                        {{isset($erro) && $erro != '' ? $erro : ''}}
+                    </div>
+                    @endif
                     <input name="usuario" value="{{old('usuario')}}" type="text" placeholder="Usuário" class="borda-preta">
                     {{ $errors->has('usuario') ? $errors->first('usuario'):'' }}
                     <input name="senha" value="{{old('senha')}}" type="password" placeholder="Senha" class="borda-preta">
                     {{ $errors->has('senha') ? $errors->first('senha'):'' }}
                     <button type="submit" class="borda-preta">Acessar</button>
                 </form>
-                {{isset($erro) && $erro != '' ? $erro : ''}}
+
             </div>
         </div>
     </div>
