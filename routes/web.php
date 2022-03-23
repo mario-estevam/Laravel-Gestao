@@ -40,7 +40,7 @@ Route::middleware('autenticacao')->prefix('/app')->group(function (){
     Route::get('/fornecedor/excluir/{id}', 'FornecedorController@excluir')->name('app.fornecedor.excluir');
 
 
-    Route::resource('produtos', 'ProdutoController');
+    Route::resource('produto', 'ProdutoController');
 });
 
 //Recebendo parametro na rota e encaminhando para o controller
