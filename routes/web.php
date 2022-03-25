@@ -41,6 +41,8 @@ Route::middleware('autenticacao')->prefix('/app')->group(function (){
 
 
     Route::resource('produto', 'ProdutoController');
+    Route::resource('produto-detalhe', 'ProdutoDetalheController');
+
 });
 
 //Recebendo parametro na rota e encaminhando para o controller

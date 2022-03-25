@@ -7,7 +7,7 @@
     <div class="conteudo-pagina">
 
         <div class="titulo-pagina-2">
-            <p>Listagem de Produtos</p>
+            <p>Listaagem de Produtos</p>
         </div>
 
         <div style="padding-bottom: 10px" class="menu">
